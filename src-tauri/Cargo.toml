@@ -10,9 +10,12 @@ edition = "2018"
 build = "src/build.rs"
 
 [dependencies]
+dotenv = "0.15"
 serde_json = "1.0"
 serde = { version = "1.0", features = [ "derive" ] }
-tauri = { version = "0.9", features = [ "all-api" ] }
+snafu = "0.6"
+rust-core = { git = "https://github.com/victorhqc/electronjs-with-rust-performance", branch = "master", features = [ "parallel", "bundled" ] }
+tauri = { version = "0.9", features = [ "event" ] }
 
 [target."cfg(windows)".build-dependencies]
 winres = "0.1"
