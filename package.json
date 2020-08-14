@@ -1,0 +1,22 @@
+{
+  "name": "tauri-hello-world",
+  "version": "0.1.0",
+  "description": "Hello World Application to learn how Tauri Apps work",
+  "main": "index.js",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorhqc/tauri-hello-world.git"
+  },
+  "author": "Victor Quiroz Castro <victorhqc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorhqc/tauri-hello-world/issues"
+  },
+  "homepage": "https://github.com/victorhqc/tauri-hello-world#readme",
+  "dependencies": {
+    "tauri": "^0.11.1"
+  }
+}
