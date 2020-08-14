@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/Root';
 import App from './components/App';
 
+import './styles/index.css';
+
 const JSApp = () => (
   <Root>
     <App />
