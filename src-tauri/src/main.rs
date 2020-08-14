@@ -7,7 +7,10 @@ mod cmd;
 use dotenv::dotenv;
 use rust_core::{
   db_pool,
-  movies::{parallel_search_movies_by_name, MoviesError},
+  movies::{
+    parallel_search_movies_by_name, parallel_search_movies_where_actress_is_taller_than_star,
+    MoviesError,
+  },
   DbError,
 };
 use snafu::{ResultExt, Snafu};
@@ -32,6 +35,23 @@ fn main() {
                 let db_path = env::var("DB_PATH").unwrap();
                 let pool = db_pool(Some(db_path.clone())).unwrap();
                 let res = parallel_search_movies_by_name(&pool, &needle).context(MoviesIssue)?;
+
+                Ok(res)
+              },
+              callback,
+              error,
+            ),
+            SearchTaller {
+              needle,
+              callback,
+              error,
+            } => tauri::execute_promise(
+              webview,
+              move || {
+                let db_path = env::var("DB_PATH").unwrap();
+                let pool = db_pool(Some(db_path.clone())).unwrap();
+                let res = parallel_search_movies_where_actress_is_taller_than_star(&pool, &needle)
+                  .context(MoviesIssue)?;
 
                 Ok(res)
               },
