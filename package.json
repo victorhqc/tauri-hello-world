@@ -4,8 +4,9 @@
   "private": true,
   "description": "Hello World Application to learn how Tauri Apps work",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run start:styles && react-scripts start",
     "start:tauri": "tauri dev",
+    "start:styles": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
