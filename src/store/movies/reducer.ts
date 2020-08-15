@@ -13,7 +13,7 @@ const initialByNameState: MoviesByNameState = {
 
 export const byName: Reducer<MoviesByNameState, MovieAction> = (
   state = initialByNameState,
-  action,
+  action
 ) => {
   switch (action.type) {
     case getType(actions.searchMoviesByName.request):
@@ -52,7 +52,7 @@ const initialTallerActressState: MoviesWithTallerActressState = {
 
 export const tallerActress: Reducer<MoviesWithTallerActressState, MovieAction> = (
   state = initialTallerActressState,
-  action,
+  action
 ) => {
   switch (action.type) {
     case getType(actions.searchMoviesWhereActressIsTaller.request):

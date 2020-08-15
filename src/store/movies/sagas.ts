@@ -27,11 +27,7 @@ function* searchMoviesByNameFlow() {
     const action = yield* take(search.request);
     yield fork(handleSearchByName, action);
 
-    yield take([
-      getType(search.failure),
-      getType(search.request),
-      getType(search.success),
-    ]);
+    yield take([getType(search.failure), getType(search.request), getType(search.success)]);
   }
 }
 
@@ -69,10 +65,7 @@ function* handleSearchByName(action: ActionType<typeof search.request>) {
 function* handleSearchTaller(action: ActionType<typeof searchTaller.request>) {
   try {
     const t0 = performance.now();
-    const result = yield* call(
-      searchMoviesWhereActressIsTaller,
-      action.payload.needle
-    );
+    const result = yield* call(searchMoviesWhereActressIsTaller, action.payload.needle);
     const t1 = performance.now();
     console.log(`Search taller took: ${t1 - t0} milliseconds.`);
     yield put(searchTaller.success({ result }));

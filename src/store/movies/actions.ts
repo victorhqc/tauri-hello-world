@@ -1,9 +1,5 @@
 import { createAsyncAction } from 'typesafe-actions';
-import {
-  ImdbMovie,
-  EnrichedImdbName,
-  ImdbNameWithMoviesAndActresses,
-} from './types';
+import { ImdbMovie, EnrichedImdbName, ImdbNameWithMoviesAndActresses } from './types';
 import { ErrorLike } from '../../utils/types';
 
 export const getAllMovies = createAsyncAction(

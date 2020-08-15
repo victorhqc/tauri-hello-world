@@ -17,6 +17,9 @@ snafu = "0.6"
 rust-core = { git = "https://github.com/victorhqc/electronjs-with-rust-performance", branch = "master", features = [ "parallel", "bundled" ] }
 tauri = { version = "0.9", features = [ "event" ] }
 
+[target."cfg(windows)".dependencies]
+web-view = { version = "0.6", features = [ "edge" ] }
+
 [target."cfg(windows)".build-dependencies]
 winres = "0.1"
 

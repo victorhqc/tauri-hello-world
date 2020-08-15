@@ -6,11 +6,7 @@ import rootReducer from '../rootReducer';
 const sagaMiddleware = createSagaMiddleware({});
 
 const buildStore = (initialState = {}) => {
-  const store = createStore(
-    rootReducer(),
-    initialState,
-    applyMiddleware(sagaMiddleware)
-  );
+  const store = createStore(rootReducer(), initialState, applyMiddleware(sagaMiddleware));
 
   sagaMiddleware.run(rootSaga);
 

@@ -18,6 +18,7 @@ use std::env;
 
 fn main() {
   dotenv().ok();
+
   tauri::AppBuilder::new()
     .invoke_handler(|webview, arg| {
       use cmd::Cmd::*;

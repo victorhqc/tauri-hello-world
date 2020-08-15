@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  useCallback,
-  useState,
-  FormEvent,
-  ChangeEvent,
-} from 'react';
+import React, { FC, useCallback, useState, FormEvent, ChangeEvent } from 'react';
 import { connect } from 'react-redux';
 import {
   searchMoviesByName as search,
@@ -51,10 +45,7 @@ const SearchByNames: FC<Props> = ({ search, items, status }) => {
           <button className="search-by-names__button">Search</button>
         </div>
         <div>
-          <label
-            className="search-by-names__input-label"
-            htmlFor="parallel-input"
-          >
+          <label className="search-by-names__input-label" htmlFor="parallel-input">
             Parallel?
           </label>
           <input
@@ -84,10 +75,7 @@ const SearchByNames: FC<Props> = ({ search, items, status }) => {
                 </p>
                 <ul className="search-by-names__item--movies">
                   {movies.map((movie) => (
-                    <div
-                      key={movie.imdbTitleId}
-                      className="search-by-names__item--movie"
-                    >
+                    <div key={movie.imdbTitleId} className="search-by-names__item--movie">
                       <p>{movie.originalTitle}</p>
                       <p>Metascore: {movie.metascore}</p>
                     </div>

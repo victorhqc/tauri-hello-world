@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  useCallback,
-  useState,
-  FormEvent,
-  ChangeEvent,
-} from 'react';
+import React, { FC, useCallback, useState, FormEvent, ChangeEvent } from 'react';
 import { connect } from 'react-redux';
 import {
   searchMoviesWhereActressIsTaller as search,
@@ -38,9 +32,7 @@ const SearchTaller: FC<Props> = ({ search, items, status }) => {
 
   return (
     <div className="search-taller" data-testid="search-taller">
-      <h1 className="search-taller__title">
-        Search Where Actresses Are Taller 💃 than the ⭐
-      </h1>
+      <h1 className="search-taller__title">Search Where Actresses Are Taller 💃 than the ⭐</h1>
       <form className="search-taller__form" onSubmit={handleSubmit}>
         <div>
           <input
@@ -53,10 +45,7 @@ const SearchTaller: FC<Props> = ({ search, items, status }) => {
           <button className="search-taller__button">Search</button>
         </div>
         <div>
-          <label
-            className="search-taller__input-label"
-            htmlFor="parallel-input"
-          >
+          <label className="search-taller__input-label" htmlFor="parallel-input">
             Parallel?
           </label>
           <input
@@ -86,10 +75,7 @@ const SearchTaller: FC<Props> = ({ search, items, status }) => {
                 </p>
                 <ul className="search-taller__item--movies">
                   {movies.map(([movie, actresses]) => (
-                    <div
-                      key={movie.imdbTitleId}
-                      className="search-taller__item--movie"
-                    >
+                    <div key={movie.imdbTitleId} className="search-taller__item--movie">
                       <p>{movie.originalTitle}</p>
                       <p>Taller Actresses:</p>
                       <ul>

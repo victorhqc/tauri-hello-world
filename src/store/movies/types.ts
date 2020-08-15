@@ -1,9 +1,7 @@
 import { AsyncList } from '../../utils/types';
 
 export type MoviesByNameState = AsyncList<EnrichedImdbName[]>;
-export type MoviesWithTallerActressState = AsyncList<
-  ImdbNameWithMoviesAndActresses[]
->;
+export type MoviesWithTallerActressState = AsyncList<ImdbNameWithMoviesAndActresses[]>;
 
 export type EnrichedImdbName = {
   data: ImdbName;
