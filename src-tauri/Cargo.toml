@@ -15,10 +15,7 @@ serde_json = "1.0"
 serde = { version = "1.0", features = [ "derive" ] }
 snafu = "0.6"
 rust-core = { git = "https://github.com/victorhqc/electronjs-with-rust-performance", branch = "master", features = [ "parallel", "bundled" ] }
-tauri = { version = "0.9", features = [ "event" ] }
-
-[target."cfg(windows)".dependencies]
-web-view = { version = "0.6", features = [ "edge" ] }
+tauri = { version = "0.9.2", features = [ "event" ] }
 
 [target."cfg(windows)".build-dependencies]
 winres = "0.1"

@@ -13,7 +13,7 @@ use rust_core::{
   },
   DbError,
 };
-use snafu::{ResultExt, Snafu};
+use snafu::{Backtrace, ResultExt, Snafu};
 use std::env;
 
 fn main() {
@@ -74,11 +74,13 @@ pub enum MoviesTaskError {
   DBIssue {
     #[snafu(source)]
     cause: DbError,
+    backtrace: Backtrace,
   },
 
   #[snafu(display("Movies failed: {}", cause))]
   MoviesIssue {
     #[snafu(source)]
     cause: MoviesError,
+    backtrace: Backtrace,
   },
 }
